@@ -6,7 +6,7 @@ on:
         type: choice
         description: "配置文件"
         required: true
-        default: oneplus_ace2_pro_b
+        default: oneplus_13_b
         options:
           - oneplus_10r_v
           - oneplus_nord_3_v
@@ -65,7 +65,7 @@ on:
         type: choice
         description: "SUSFS模块下载调用方向"
         required: true
-        default: NoN
+        default: Release
         options:
           - CI
           - Release
@@ -74,7 +74,7 @@ on:
         type: choice
         description: "内核模块实现方式"
         required: true
-        default: KPM
+        default: NoN
         options:
           - KPM
           - KPN
@@ -92,18 +92,18 @@ on:
       BUILD_TIME:
         type: string
         description: "自定义构建时间(输入F使用当前UTC时间)"
-        required: false
-        default: "Thu Dec 11 04:17:27 UTC 2025"
+        required: true
+        default: "Tue Oct 28 09:04:21 UTC 2025"
       KSU_META:
         type: string
         description: "分支名(必填)/自定义版本标识(留空不修改)/回退分支提交哈希版本(留空不修改)"
         required: false
-        default: "builtin/Numbersf/"
+        default: "builtin//"
       SUFFIX:
         type: string
         description: "自定义内核后缀(不输入使用随机字符串)"
-        required: false
-        default: ""
+        required: true
+        default: "8-g096cdb6ecefc-ab14358676-4k"
       SUBLEVEL:
         description: "自定义内核等级欺骗(SUBLEVEL)"
         required: false
@@ -122,7 +122,7 @@ on:
         type: boolean
         description: "是否启用网络功能拓展(NETFILTER)？"
         required: true
-        default: true
+        default: false
       BBR_ECN:
         type: boolean
         description: "是否启用网络优化算法(BBR+ECN)？"
@@ -137,12 +137,12 @@ on:
         type: boolean
         description: "是否添加风驰驱动1.0？"
         required: true
-        default: false
+        default: true
       ZRAM:
         type: boolean
         description: "是否添加更多ZRAM算法？"
         required: true
-        default: false
+        default: true
       XUS_FIX:
         type: boolean
         description: "是否阻止5US报错文件产生？"
